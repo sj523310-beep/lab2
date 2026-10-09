@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <math.h>
+
+int main(void) {
+    double a, x;
+    printf("Task 49: z = tan(a) * cos(2*x) / a\n");
+    printf("Enter a and x (radians): ");
+    if (scanf("%lf %lf", &a, &x) != 2) return 0;
+
+    if (fabs(a) < 1e-12) {
+        printf("Error: denominator a is zero.\n");
+        return 0;
+    }
+    if (fabs(cos(a)) < 1e-12) {
+        printf("Error: tan(a) is undefined.\n");
+        return 0;
+    }
+
+    double z = tan(a) * cos(2.0 * x) / a;
+    printf("z = %.6f\n", z);
+    return 0;
+}

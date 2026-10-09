@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <math.h>
+
+int main(void) {
+    double x, y, z, a, b, c, d, f;
+    printf("Task 27: z = cos^2(x)/sin(x) - x*y*z + (a*x^2+b*x+c)/(d*x^3-f)\n");
+    printf("Enter x, y, z, a, b, c, d, f: ");
+    if (scanf("%lf %lf %lf %lf %lf %lf %lf %lf", &x, &y, &z, &a, &b, &c, &d, &f) != 8) return 0;
+
+    double sinX = sin(x);
+    double denominator = d * x * x * x - f;
+    if (fabs(sinX) < 1e-12) {
+        printf("Error: sin(x) is zero.\n");
+        return 0;
+    }
+    if (fabs(denominator) < 1e-12) {
+        printf("Error: second fraction denominator is zero.\n");
+        return 0;
+    }
+
+    double numerator = a * x * x + b * x + c;
+    double zResult = cos(x) * cos(x) / sinX - x * y * z + numerator / denominator;
+    printf("result = %.6f\n", zResult);
+    return 0;
+}

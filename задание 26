@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <math.h>
+
+int main(void) {
+    double z;
+    printf("Task 26: result = cos^2(sin(1/z))\n");
+    printf("Enter z: ");
+    if (scanf("%lf", &z) != 1) return 0;
+
+    if (fabs(z) < 1e-12) {
+        printf("Error: division by zero in 1/z.\n");
+        return 0;
+    }
+
+    double value = cos(sin(1.0 / z));
+    double result = value * value;
+    printf("result = %.6f\n", result);
+    return 0;
+}

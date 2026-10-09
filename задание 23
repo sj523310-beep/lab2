@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <math.h>
+
+int main(void) {
+    double x;
+    printf("Task 23: z = x - 10*sin(x) + |x^4 - x^5|\n");
+    printf("Enter x (radians for sin): ");
+    if (scanf("%lf", &x) != 1) return 0;
+
+    double x4 = x * x * x * x;
+    double x5 = x4 * x;
+    double z = x - 10.0 * sin(x) + fabs(x4 - x5);
+
+    printf("z = %.6f\n", z);
+    return 0;
+}

@@ -1,0 +1,12 @@
+#include <stdio.h>
+
+int main(void) {
+    double v0, t, a;
+    printf("Task 30: z = v0*t + a*t*t/2\n");
+    printf("Enter v0, t and a: ");
+    if (scanf("%lf %lf %lf", &v0, &t, &a) != 3) return 0;
+
+    double z = v0 * t + a * t * t / 2.0;
+    printf("z = %.6f\n", z);
+    return 0;
+}
